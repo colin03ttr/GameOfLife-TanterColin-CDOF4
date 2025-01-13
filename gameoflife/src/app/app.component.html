@@ -1,0 +1,39 @@
+<h1 class="title">{{ title }}</h1>
+<div class="grid">
+  <div *ngFor="let row of grid; let rowIndex = index" [attr.data-row]="rowIndex" class="row">
+    <div *ngFor="let cell of row; let colIndex = index" [attr.data-col]="colIndex" (click)="toggleCell(rowIndex, colIndex)" [class.cell]="true" [class.live]="cell"></div>
+  </div>
+</div>
+<button (click)="nextGeneration()">Next Generation</button>
+
+
+<style>
+  .title {
+    text-align: left;
+  }
+  .grid {
+    justify-content: left;
+  }
+  .cell {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    background-color: white;
+  }
+  .cell.live {
+    background-color: black;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
