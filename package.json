@@ -1,0 +1,19 @@
+{
+  "name": "gameoflife",
+  "version": "1.0.0",
+  "description": "a Game Of Life project for ESILV Decentralized Technologies course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colin03ttr/GameOfLife-TanterColin-CDOF4.git"
+  },
+  "author": "colin03ttr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colin03ttr/GameOfLife-TanterColin-CDOF4/issues"
+  },
+  "homepage": "https://github.com/colin03ttr/GameOfLife-TanterColin-CDOF4#readme"
+}
