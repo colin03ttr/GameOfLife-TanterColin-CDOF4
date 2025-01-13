@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/colin03ttr/GameOfLife-TanterColin-CDOF4/issues"
   },
-  "homepage": "https://github.com/colin03ttr/GameOfLife-TanterColin-CDOF4#readme"
+  "homepage": "https://github.com/colin03ttr/GameOfLife-TanterColin-CDOF4#readme",
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2"
+  }
 }
