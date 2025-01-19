@@ -7,7 +7,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet, NgFor],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'Game of Life';
@@ -21,15 +21,25 @@ export class AppComponent {
   }
 
   initializeGrid(): void {
-    this.grid = Array.from({ length: this.rows }, () => Array(this.cols).fill(false));
+    this.grid = Array.from({ length: this.rows }, () =>
+      Array(this.cols).fill(false)
+    );
   }
 
   toggleCell(row: number, col: number): void {
+    // Prevent toggling cells if auto-generation is running
+    if (this.intervalId) {
+      console.warn('Cannot toggle cells while generation is running');
+      return;
+    }
+
     this.grid[row][col] = !this.grid[row][col];
   }
 
   nextGeneration(): void {
-    const newGrid = Array.from({ length: this.rows }, () => Array(this.cols).fill(false));
+    const newGrid = Array.from({ length: this.rows }, () =>
+      Array(this.cols).fill(false)
+    );
 
     for (let row = 0; row < this.rows; row++) {
       for (let col = 0; col < this.cols; col++) {
@@ -52,7 +62,12 @@ export class AppComponent {
         if (i === 0 && j === 0) continue;
         const newRow = row + i;
         const newCol = col + j;
-        if (newRow >= 0 && newRow < this.rows && newCol >= 0 && newCol < this.cols) {
+        if (
+          newRow >= 0 &&
+          newRow < this.rows &&
+          newCol >= 0 &&
+          newCol < this.cols
+        ) {
           count += this.grid[newRow][newCol] ? 1 : 0;
         }
       }
