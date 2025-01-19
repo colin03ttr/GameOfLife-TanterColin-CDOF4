@@ -18,6 +18,11 @@ Make sure you have the following installed:
 - **npm** (Node Package Manager, included with Node.js)
 - **Git** (for version control)
 
+To install Node.js, follow the steps on:
+https://nodejs.org/fr/download
+
+npm will be automatically installed
+
 To check if these are installed:
 ```bash
 node -v
@@ -39,6 +44,7 @@ Follow these steps to set up the project on your local machine:
 2. Navigate to the project directory:
    ```bash
    cd GameOfLife-TanterColin-CDOF4
+   cd gameoflife
    ```
 
 3. Install the dependencies:
@@ -48,9 +54,8 @@ Follow these steps to set up the project on your local machine:
 
 4. Start the application:
    ```bash
-   npm start
+   ng serve
    ```
-
 ---
 
 ### Running the Game
@@ -59,21 +64,6 @@ Once started, the **Game of Life** will run a simulation based on an initial con
 
 ---
 
-## Running the Tests
-
-To ensure everything is working correctly, run the automated tests:
-
-1. Run all tests:
-   ```bash
-   npm test
-   ```
-
-2. For individual test files:
-   ```bash
-   npm test -- <test-file-name>
-   ```
-
----
 
 ### Testing Details
 
@@ -88,7 +78,7 @@ To deploy the **Game of Life** on a live system:
 
 1. Build the project:
    ```bash
-   npm run build
+   ng serve
    ```
 
 2. Use a Node.js-compatible server or hosting service to serve the application.

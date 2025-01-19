@@ -14,6 +14,7 @@ export class AppComponent {
   rows = 20; // Number of rows in the grid
   cols = 20; // Number of columns in the grid
   grid: boolean[][] = [];
+  intervalId: any = null; // To store the interval reference
 
   constructor() {
     this.initializeGrid();
@@ -57,5 +58,23 @@ export class AppComponent {
       }
     }
     return count;
+  }
+
+  startAutoGeneration(): void {
+    // If an interval is already running, do nothing
+    if (this.intervalId) return;
+
+    // Start a new interval to generate every 0.5 seconds
+    this.intervalId = setInterval(() => {
+      this.nextGeneration();
+    }, 500);
+  }
+
+  stopAutoGeneration(): void {
+    // Clear the interval and reset the intervalId
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
   }
 }
